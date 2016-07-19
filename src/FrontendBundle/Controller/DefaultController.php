@@ -53,7 +53,9 @@ class DefaultController extends Controller
     	$em = $this->getDoctrine()->getManager();
         $user = $this->container->get('security.context')->getToken()->getUser();
 		
-		return $this->render('FrontendBundle:Default:article.html.twig');
+		return $this->render('FrontendBundle:Default:article.html.twig',  array(
+            'commentaires' => $commentaires,
+            ));
     }
 
     public function showAction($id)
@@ -68,5 +70,15 @@ class DefaultController extends Controller
         		'movie' => $thisMovie,
         ));
 
+    }
+    public function ComAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $commentaires = $em->getRepository('AppBundle:Commentaire')->findAll();
+
+        return $this->render('FrontendBundle:Default:show.html.twig', array(
+            'commentaires' => $commentaires,
+        ));
     }
 }

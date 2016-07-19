@@ -1,3 +1,7 @@
+app_commentaire:
+    resource: "@AppBundle/Controller/CommentaireController.php"
+    type:     annotation
+
 frontend:
     resource: "@FrontendBundle/Resources/config/routing.yml"
     prefix:   /

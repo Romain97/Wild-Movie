@@ -15,10 +15,22 @@
 	</div>
 	<div class="col-md-10 col-md-offset-1">
 		<div class="col-md-12">
-			<h2>Commentaires : </h2>
-			<hr>
+			
+			<div class="col-md-4 com">
+				<h2>Donne ton avis <a href="{{ path('commentaire_new') }}"><strong>ici</strong></a></h2>
+				<h3>Commentaires : </h3>
+				{# {% for commentaire in commentaires %}
 
-			{# CODE HERE #}
+				<tr>
+                <th>Titre</th>
+                <td>{{ commentaire.titre }}</td>
+            </tr>
+            <tr>
+                <th>Contenu</th>
+                <td>{{ commentaire.contenu }}</td>
+            </tr>
+        		{% endfor %} #}
+			</div>
 		</div>
 	</div>
 
